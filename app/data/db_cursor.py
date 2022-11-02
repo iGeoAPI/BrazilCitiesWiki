@@ -1,14 +1,16 @@
 import sqlite3
-from playground import data
+from json import load
 
 DATA_BASE = 'database.db'
 
 con = sqlite3.connect(DATA_BASE)
 cursor = con.cursor()
 
-for city in data:
-    cursor.execute(f'INSERT INTO TABLE city(, name TEXT, federative_unit TEXT, motto TEXT, zip_range TEXT, '
-                   'anthem TEXT, flag TEXT, blazon TEXT, total_area INT)')
-
-
-cursor.close()
+with open('cities_data.json') as file:
+    data = load(file)
+    for k, v in data[0].items():
+        for item in v:
+            cursor.execute(f"INSERT INTO city VALUES({int(item['ibge'])}, {item['name']}, {k},'','', "
+                           "'','','','')")
+    con.commit()
+    con.close()
