@@ -10,7 +10,7 @@ with open('cities_data.json') as file:
     data = load(file)
     for k, v in data[0].items():
         for item in v:
-            cursor.execute(f"INSERT INTO city VALUES({int(item['ibge'])}, {item['name']}, {k},'','', "
-                           "'','','','')")
+            query = f'INSERT INTO city VALUES({int(item["ibge"])}, "{item["name"]}", "{k}", "", "", "", "", "", 0)'
+            cursor.execute(query)
     con.commit()
     con.close()
