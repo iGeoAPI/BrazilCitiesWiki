@@ -7,7 +7,6 @@ def database_cursor(*args):
         if not args:
             return file
         for state in file[0]:
-            if args[0].title() == state:
+            if args[0].lower() == state.lower():
                 return {f'{state}': file[0][state]}
-            else:
-                return None
+        return None
