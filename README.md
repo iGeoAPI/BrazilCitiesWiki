@@ -2,7 +2,7 @@
 This is an API that provides with information about Brazil cities
 
 ## Python version
-* 3.11.x
+* 3.10.x
 
 ## Webpages for data collection
 * [Gov Districts API](https://servicodados.ibge.gov.br/api/v1/localidades/distritos)
