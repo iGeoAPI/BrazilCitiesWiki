@@ -1,7 +1,7 @@
 from typing import List
 from fastapi import APIRouter, Response
 from http import HTTPStatus
-from app.data.json_cursor import database_cursor
+from app.data.cities_data_cursor import database_cursor
 
 router = APIRouter()
 
