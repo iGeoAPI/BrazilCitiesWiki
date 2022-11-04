@@ -1,12 +1,13 @@
 from fastapi import FastAPI
 import uvicorn
-from app.routers import city
+from app.routers import city, state
 
 
 app = FastAPI()
 
 
 app.include_router(city.router)
+app.include_router(state.router)
 
 
 @app.get('/')
