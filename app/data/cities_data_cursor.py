@@ -12,11 +12,19 @@ def json_cursor(*args, scope: str = None):
                     return {f'{state}': file[state]}
             return None
 
+# TODO: Guarantee the cities call endpoint is properly working
     def iter_func():
         with open('data/cities_data.json') as file:
             file = load(file)[0]
-            for state in file:
-                for city in file[state]:
-                    yield city
-
+            if not args:
+                for state in file:
+                    for city in file[state]:
+                        yield city
+            else:
+                for state in file:
+                    for city in file[state]:
+                        if city == args[0]:
+                            yield city
+                        else:
+                            return None
     return iter_func()
