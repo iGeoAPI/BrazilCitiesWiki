@@ -14,7 +14,7 @@ def json_cursor(*args, scope: str = None):
 
 # TODO: Guarantee the cities call endpoint is properly working
     def iter_func():
-        with open('data/cities_data.json') as file:
+        with open('data/json_data/cities_data.json') as file:
             file = load(file)[0]
             if not args:
                 for state in file:

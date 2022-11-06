@@ -5,8 +5,8 @@ from sqlite3 import IntegrityError
 
 try:
     os.remove('database.db')
-except FileNotFoundError:
-    pass
+except FileNotFoundError as err:
+    print('Creating a new database from scratch')
 
 DATA_BASE = 'database.db'
 
@@ -28,7 +28,7 @@ try:
 except Exception as e:
     print(e)
 
-with open('json/cities_data.json') as file:
+with open('../json_data/cities_data.json') as file:
     data = load(file)
     for k, v in data[0].items():
         for item in v:
