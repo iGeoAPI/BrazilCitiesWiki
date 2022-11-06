@@ -3,7 +3,7 @@ from json import load
 
 def json_cursor(*args, scope: str = None):
     if scope == 'states':
-        with open('data/cities_data.json') as file:
+        with open('data/json_data/cities_data.json') as file:
             file = load(file)[0]
             if not args:
                 return file

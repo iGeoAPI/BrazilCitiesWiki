@@ -1,7 +1,7 @@
-from typing import List, Optional
+from typing import List
 from http import HTTPStatus
 from app.schemas import CityIn
-from app.data.cities_data_cursor import json_cursor
+from app.data.json_data.cities_data_cursor import json_cursor
 
 
 from fastapi import APIRouter, Response

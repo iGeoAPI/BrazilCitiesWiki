@@ -2,7 +2,8 @@ from json import load
 
 values = []
 
-with open('cities_data.json') as file:
+# TODO: Implement a better version of code for data collection
+with open('json/cities_data.json') as file:
     file = load(file)[0]
     print(dir(file))
     for state in file:

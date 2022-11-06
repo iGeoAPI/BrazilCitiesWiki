@@ -28,7 +28,7 @@ try:
 except Exception as e:
     print(e)
 
-with open('cities_data.json') as file:
+with open('json/cities_data.json') as file:
     data = load(file)
     for k, v in data[0].items():
         for item in v:
